@@ -15,8 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('home');
 });
+
+Route::get('/about', function () {
+    return view('about',[
+        "name" => "ahmad",
+        "email" => "ahmadpato@gmail.com",
+        "image" => "gambar.jpg"
+    ]);
+});
+
+Route::get('/blog', function () {
+    return view('post');
+ });
 
 
 Route::get('/product', [ProductController::class, 'index']);
