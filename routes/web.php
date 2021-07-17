@@ -36,5 +36,4 @@ Route::get('/blog',[PostController::class,'index']);
 
 Route::get('/posts/{slug}',[PostController::class,'show']);
 
-
 Route::get('/product', [ProductController::class, 'index']);
