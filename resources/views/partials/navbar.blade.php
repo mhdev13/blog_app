@@ -5,17 +5,23 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link {{ ($title === "Home") ? 'active' : ''}}" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link {{ ($title === "About") ? 'active' : ''}}" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link {{ ($title === "Posts") ? 'active' : ''}}" href="/blog">Blog</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === "Home") ? 'active' : ''}}" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === "About") ? 'active' : ''}}" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === "Posts") ? 'active' : ''}}" href="/blog">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ ($active === "Categories") ? 'active' : ''}}" href="/categories">Categories</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
