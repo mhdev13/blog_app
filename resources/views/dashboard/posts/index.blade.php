@@ -5,8 +5,8 @@
   <h1 class="h2">My Posts</h1>
 </div>
 
-<div class="table-responsive col-lg-8">
-    <table class="table table-striped table-sm">
+<div class="table-responsive col-lg-12">
+    <table id="example" class="table table-striped" style="width:100%">
       <thead>
         <tr>
           <th scope="col">No</th>
@@ -31,5 +31,18 @@
       </tbody>
     </table>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" rel="stylesheet"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" rel="stylesheet"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js" rel="stylesheet"></script>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+});
+</script>
+
 
 @endsection
