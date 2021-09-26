@@ -13,7 +13,7 @@
             <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
 
             <article class="my-3 fs-5">
-                {!!  $post->body !!}
+                {!! $post->body !!}
             </article>
             
         </div>
