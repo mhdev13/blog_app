@@ -8,7 +8,13 @@
 
             <a href="/dashboard/posts" class="btn btn-primary"><span data-feather="arrow-left"></span> Back to My Posts</a>
             
-            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
+            @if ($post->image)
+                <div style="max-height: 350px; overflow:hidden">
+                    <img src="{{ asset('storage/'. $post->image) }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
+            @endif
 
             <article class="my-3 fs-5">
                 {!! $post->body !!}
