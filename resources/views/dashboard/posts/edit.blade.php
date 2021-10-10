@@ -57,6 +57,4 @@
     </form>
 </div>
 
-<script src="/js/crud.js"></script>
-
 @endsection
