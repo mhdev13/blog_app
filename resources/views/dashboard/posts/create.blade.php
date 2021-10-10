@@ -51,22 +51,11 @@
         </div>
        
         <button type="submit" class="btn btn-primary">Create Post</button>
+        <button onclick="goBack()" class="btn btn-primary">Back to My Post</a></button>
+
     </form>
 </div>
 
-<script>
-    const title = document.querySelector('#title');
-    const slug  = document.querySelector('#slug');
+<script src="/js/crud.js"></script>
 
-    title.addEventListener('change', function(){
-        fetch('/dashboard/posts/checkSlug?title=' + title.value)
-            .then(response => response.json())
-            .then(data => slug.value = data.slug)
-    });
-
-    document.addEventListener('trix-file-accept', function(e){
-        e.preventDefault();
-    });
-
-</script>
 @endsection
