@@ -6,7 +6,7 @@
         <div class="col-lg-8">
             <h1 class="mb-3">{{ $post->title }}</h1>
 
-            <a href="/dashboard/posts" class="btn btn-primary"><span data-feather="arrow-left"></span> Back to all my posts</a>
+            <a href="/dashboard/posts" class="btn btn-primary"><span data-feather="arrow-left"></span> Back to My Posts</a>
             
             <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
 
