@@ -23,19 +23,14 @@ use App\Http\Controllers\AdminCategoryController;
 */
 
 Route::get('/', function () {
-   return view('home', [
-       "title" => "Home",
-       'active' => 'home',
-   ]);
-});
-
-Route::get('/about', function () {
     return view('about',[
-        "title" => "About",
+        "title"  => "About",
         'active' => 'about',
-        "name" => "ahmad",
-        "email" => "ahmadpato@gmail.com",
-        "image" => "gambar.jpg"
+        "name"  => "Muhmammad Hidayaturrohman",
+        "email" => "mhidayaturachman@gmail.com",
+        "job"   => "Full Stack Developer",
+        "image_github" => "github.png",
+        "about" => "I am a professional full stack developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, online media, and edutech. I master several programming languages ​​such as php with laravel framework and codeigniter, ruby ​​on rails, javascript, mysql and postgresql."
     ]);
 });
 

@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="boostrap">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,19 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "Home") ? 'active' : ''}}" href="/">Home</a>
+                    <a class="nav-link {{ ($active === "About") ? 'active' : ''}}" href="/">About Me</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "About") ? 'active' : ''}}" href="/about">About</a>
+                    <a class="nav-link {{ ($active === "Posts") ? 'active' : ''}}" href="/blog">My Blog</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "Posts") ? 'active' : ''}}" href="/blog">Blog</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {{ ($active === "Categories") ? 'active' : ''}}" href="/categories">Categories</a>
+                    <a class="nav-link {{ ($active === "Portofolio") ? 'active' : ''}}" href="#">Portofolio</a>
                 </li>
             </ul>
 
@@ -44,9 +37,9 @@
                 </li>
             @else
                 <li class="nav-item">    
-                    <a href="/login" class="nav-link" {{ ($active === "Login") ? 'active' : ''}}><i class="bi bi-box-arrow-in-right"></i> 
+                    {{-- <a href="/login" class="nav-link" {{ ($active === "Login") ? 'active' : ''}}><i class="bi bi-box-arrow-in-right"></i> 
                     Login
-                    </a>
+                    </a> --}}
                 </li>
             </ul>
             @endauth

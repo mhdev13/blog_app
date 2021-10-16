@@ -18,3 +18,11 @@
     border-radius: 0;
     margin-bottom: -1px;
   }
+
+  @media screen and (max-width: 767px) {
+    .social-link {
+      display: block;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
