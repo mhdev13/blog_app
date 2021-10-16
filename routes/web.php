@@ -4,6 +4,7 @@ use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -35,6 +36,8 @@ Route::get('/', function () {
 });
 
 Route::get('/blog',[PostController::class,'index']);
+
+Route::get('/portofolio',[PortofolioController::class,'index']);
 
 Route::get('/posts/{post:slug}',[PostController::class,'show']);
 
