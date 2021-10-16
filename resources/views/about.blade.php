@@ -14,6 +14,16 @@
                             <p class="fonts">{{ $about }}</p>
                         </div>
                         <div class="mt-3"> 
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-sass"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-php"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-laravel"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
+                            </ul>
                             <a href="https://github.com/ahmadpato" class="btn btn-outline-primary px-4 ms-3 social-link" button="submit" target="_blank">Follow My Github</a>
                             <a href="https://www.linkedin.com/in/muhammad-hidayaturrohman-0a1707a8/" class="btn btn-primary px-4 ms-3 social-link" button="submit" target="_blank">Follow My Linkedin</a>
                         </div>

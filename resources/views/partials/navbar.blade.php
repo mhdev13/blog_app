@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">
         </a>
@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">About Me</a>
+                    <a class="nav-link" href="/">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/blog">My Blog</a>
+                    <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/portofolio">Portofolio</a>
