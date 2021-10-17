@@ -52,8 +52,7 @@ class AdminCategoryController extends Controller
             'slug' => 'required',
             'description' => 'required'
         ];
-        ddd($request);exit;
-
+    
         $validatedData = $request->validate($rules);
         
         Category::where('id', $category->id)

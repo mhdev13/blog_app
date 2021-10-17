@@ -26,7 +26,7 @@
     @if ($posts->count())
         <div class="card mb-3">
             @if ($posts[0]->image)
-            <div style="max-height: 350px; overflow:hidden">
+            <div style="max-height: 350px; overflow:hidden; text-align:center">
                 <img src="{{ asset('storage/'. $posts[0]->image) }}" class="img-fluid" alt="{{ $posts[0]->category->name }}">
             </div>
             @else
