@@ -17,7 +17,7 @@
             </div>
             @enderror
         </div>
-        <div class="form-floating">
+        <div class="form-floating mt-3">
             <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="User Name" required value="{{ old('username') }}">
             <label for="username">User Name</label>
             @error('username')
@@ -26,7 +26,7 @@
             </div>
             @enderror
         </div>
-        <div class="form-floating">
+        <div class="form-floating mt-3">
           <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
           <label for="email">Email address</label>
             @error('email')
@@ -35,7 +35,7 @@
             </div>
             @enderror
         </div>
-        <div class="form-floating">
+        <div class="form-floating mt-3">
           <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
           <label for="password">Password</label>
           @error('password')
@@ -47,7 +47,7 @@
         <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Regiter</button>
       </form>
       <small class="d-block text-center mt-3">
-        Already Registered? <a href="/login">Login</a>
+        Already Registered? <a href="/dash-login">Login</a>
       </small>
   </main>
   </div>

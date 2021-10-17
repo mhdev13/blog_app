@@ -31,6 +31,7 @@ Route::get('/', function () {
         "email" => "mhidayaturachman@gmail.com",
         "job"   => "Full Stack Developer",
         "image_github" => "github.png",
+        "image_me" => "me.jpg",
         "about" => "I am a professional full stack developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, news portal, and edutech. I master several programming languages ​​such as php with laravel framework and codeigniter, ruby ​​on rails, javascript, mysql and postgresql."
     ]);
 });
@@ -49,7 +50,7 @@ Route::get('/categories', function(){
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/dash-login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 

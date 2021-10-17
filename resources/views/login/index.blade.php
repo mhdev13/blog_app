@@ -33,7 +33,7 @@
             </div>
           @enderror
         </div>
-        <div class="form-floating">
+        <div class="form-floating mt-3">
           <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
           <label for="password">Password</label>
         </div>
