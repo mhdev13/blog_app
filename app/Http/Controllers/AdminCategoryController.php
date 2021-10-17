@@ -46,14 +46,14 @@ class AdminCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
-    {
-        
+    {   
         $rules = [
             'name' => 'required',
             'slug' => 'required',
             'description' => 'required'
         ];
-        
+        ddd($request);exit;
+
         $validatedData = $request->validate($rules);
         
         Category::where('id', $category->id)

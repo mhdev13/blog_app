@@ -31,7 +31,7 @@
             <td>{{ $category->slug }}</td>
             <td>{{ $category->description }}</td>
             <td>
-                <button a href="/dashboard/categories/{{ $category->slug }}" class="btn btn-info mb-3">
+                <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#view{{ $category->id }}">
                   <span data-feather="eye"></span></a></button>
                 <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#edit{{ $category->id }}">
                   <span data-feather="edit"></span>
@@ -45,6 +45,50 @@
                 </form>
             </td>
           </tr>
+
+          <!---modal view -->
+          <div class="modal fade" id="view{{ $category->id }}" tabindex="-1" aria-labelledby="viewLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewLabel">View Category</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form method="post" id="update_form" action="/dashboard/categories/{{ $category->id }}" class="mb-5">
+                    @method('put')
+                    @csrf
+                    <div class="mb-3">
+                      <label class="col-form-label">Category Name:</label>
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="name" name="name" disabled value="{{ old('name', $category->name) }}">
+                      @error('name')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label">Slug:</label>
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" disabled value="{{ old('slug', $category->slug) }}">
+                      @error('slug')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label">Description:</label>
+                      <textarea type="text" class="form-control" name="description" disabled value="{{ old('slug', $category->description) }}">{{ $category->description }}</textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end modal view -->
 
           <!---modal edit -->
           <div class="modal fade" id="edit{{ $category->id }}" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true">
@@ -78,7 +122,7 @@
                     </div>
                     <div class="mb-3">
                       <label class="col-form-label">Description:</label>
-                      <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" required value="{{ old('description', $category->description) }}" name="description" id="description"></textarea>
+                      <textarea type="text" class="form-control" name="description" value="{{ old('slug', $category->description) }}">{{ $category->description }}</textarea>
                     </div>
                   </form>
                 </div>
@@ -90,7 +134,6 @@
             </div>
           </div>
           <!--end modal edit -->
-
           @endforeach
       </tbody>
     </table>
