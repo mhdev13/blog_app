@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Posts Categories</h1>
+  <h1 class="h2">Categories</h1>
 </div>
 
 @if(session()->has('success'))
@@ -12,12 +12,14 @@
 @endif
 
 <div class="table-responsive col-lg-12">
-   <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create New Category</a>
+   <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#create" data-bs-whatever="@mdo">Create New Category</button>
     <table id="allpost" class="table table-striped" style="width:100%">
       <thead>
         <tr>
           <th scope="col">No</th>
           <th scope="col">Category Name</th>
+          <th scope="col">Slug</th>
+          <th scope="col">Description</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -26,19 +28,106 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $category->name }}</td>
+            <td>{{ $category->slug }}</td>
+            <td>{{ $category->description }}</td>
             <td>
-                <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                <form action="/dashboard/categories/{{ $category->slug }}" method="POST" class="d-inline">
+                <button a href="/dashboard/categories/{{ $category->slug }}" class="btn btn-info mb-3">
+                  <span data-feather="eye"></span></a></button>
+                <button type="button" class="btn btn-warning mb-3" data-bs-toggle="modal" data-bs-target="#edit{{ $category->id }}">
+                  <span data-feather="edit"></span>
+                </button>
+                <form action="/dashboard/categories/{{ $category->id }}" method="POST" class="d-inline">
                   @method('delete')
                   @csrf
-                  <button class="badge bg-danger border-0" onclick="return confirm('Are You Sure ?')"><span data-feather="x-circle"></span></button>
+                  <button class="btn btn-danger mb-3" onclick="return confirm('Are You Sure ?')">
+                    <span data-feather="x-circle"></span>
+                  </button>
                 </form>
             </td>
           </tr>
+
+          <!---modal edit -->
+          <div class="modal fade" id="edit{{ $category->id }}" tabindex="-1" aria-labelledby="editLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editLabel">Edit Category</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form method="post" id="update_form" action="/dashboard/categories/{{ $category->id }}" class="mb-5">
+                    @method('put')
+                    @csrf
+                    <div class="mb-3">
+                      <label class="col-form-label">Category Name:</label>
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="name" name="name" required value="{{ old('name', $category->name) }}">
+                      @error('name')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label">Slug:</label>
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug', $category->slug) }}">
+                      @error('slug')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label class="col-form-label">Description:</label>
+                      <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" required value="{{ old('description', $category->description) }}" name="description" id="description"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button onclick="form_update()" type="submit" class="btn btn-primary">Update Category</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end modal edit -->
+
           @endforeach
       </tbody>
     </table>
+
+    <!---modal create -->
+    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="createLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createLabel">Create Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" id="submit_form" action="/dashboard/categories" class="mb-5">
+              @csrf
+              <div class="mb-3">
+                <label class="col-form-label">Category Name:</label>
+                <input type="text" class="form-control" name="name" id="name">
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label">Slug:</label>
+                <input type="text" class="form-control" name="slug" id="slug">
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label">Description:</label>
+                <textarea class="form-control" name="description" id="description"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button onclick="form_submit()" type="submit" class="btn btn-primary">Create Category</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end modal create -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" rel="stylesheet"></script>
@@ -52,6 +141,5 @@ $(document).ready(function() {
     $('#allpost').DataTable();
 });
 </script>
-
 
 @endsection

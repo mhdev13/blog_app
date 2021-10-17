@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
-
 class AdminCategoryController extends Controller
 {
     /**
@@ -21,16 +20,6 @@ class AdminCategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -38,29 +27,15 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AdminCategory  $adminCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(AdminCategory $adminCategory)
-    {
-        //
-    }
+        Category::create($validatedData);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AdminCategory  $adminCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AdminCategory $adminCategory)
-    {
-        //
+        return redirect('dashboard/categories')->with('success', 'Saved Success');
     }
 
     /**
@@ -70,19 +45,27 @@ class AdminCategoryController extends Controller
      * @param  \App\Models\AdminCategory  $adminCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdminCategory $adminCategory)
+    public function update(Request $request, Category $category)
     {
-        //
+        
+        $rules = [
+            'name' => 'required',
+            'slug' => 'required',
+            'description' => 'required'
+        ];
+        
+        $validatedData = $request->validate($rules);
+        
+        Category::where('id', $category->id)
+            ->update($validatedData);
+
+        return redirect('dashboard/categories')->with('success', 'Edit Success');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AdminCategory  $adminCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(AdminCategory $adminCategory)
-    {
-        //
+    public function destroy(Category $category)
+    {   
+        Category::destroy($category->id);
+
+        return redirect('dashboard/categories')->with('success', 'Delete Success');
     }
 }
