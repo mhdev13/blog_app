@@ -45,7 +45,7 @@
 
     <script src="/js/dashboard.js"></script>
 
-    <script src="/js/form_crud_modal.js"></script>
+    <script src="/js/form_crud.js"></script>
 
   </body>
 </html>

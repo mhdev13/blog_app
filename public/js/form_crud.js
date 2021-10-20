@@ -7,6 +7,15 @@ title.addEventListener('change', function(){
         .then(data => slug.value = data.slug)
 });
 
+const nameCategories = document.querySelector('#name');
+const slugCategories  = document.querySelector('#slug');
+
+title.addEventListener('change', function(){
+    fetch('/dashboard/categories/checkSlug?name=' + nameCategories.value)
+        .then(response => response.json())
+        .then(data => slugCategories.value = data.slugCategories)
+});
+
 document.addEventListener('trix-file-accept', function(e){
     e.preventDefault();
 });
@@ -28,5 +37,3 @@ function previewImage(){
         imgPreview.src = oFREvent.target.result;
     }
 }
-
-

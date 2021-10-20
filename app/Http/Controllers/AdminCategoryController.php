@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class AdminCategoryController extends Controller
 {
@@ -17,6 +20,11 @@ class AdminCategoryController extends Controller
         return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
+    }
+
+    public function create()
+    {
+        return view('dashboard.categories.create');  
     }
 
     /**
@@ -36,6 +44,13 @@ class AdminCategoryController extends Controller
         Category::create($validatedData);
 
         return redirect('dashboard/categories')->with('success', 'Saved Success');
+    }
+
+    public function edit(Category $category)
+    {
+        return view('dashboard.categories.edit', [
+            'category' => $category
+        ]);  
     }
 
     /**
@@ -66,5 +81,12 @@ class AdminCategoryController extends Controller
         Category::destroy($category->id);
 
         return redirect('dashboard/categories')->with('success', 'Delete Success');
+    }
+
+    public function checkSlug(Request $request)
+    {
+
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
     }
 }
