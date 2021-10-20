@@ -41,6 +41,7 @@ class PostController extends Controller
         return view('posts', [
             "title" => "Single Post",
             'active' => 'post',
+            "image_wa" => "wa.png",
             "post" => $post
         ]);
     }
