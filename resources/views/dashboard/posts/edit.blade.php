@@ -67,7 +67,7 @@
             <trix-editor input="body"></trix-editor>
         </div>
        
-        <button onclick="goBack()" class="btn btn-secondary">Back to My Post</a></button>
+        <a href="/dashboard/posts" class="btn btn-secondary">Back to My Post</a>
         <button type="submit" class="btn btn-primary">Update Post</button>
 
     </form>

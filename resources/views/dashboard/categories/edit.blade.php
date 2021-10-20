@@ -34,7 +34,7 @@
             <textarea type="text" class="form-control" name="description" value="{{ old('slug', $category->description) }}">{{ $category->description }}</textarea>
         </div>
 
-        <button onclick="goBack()" class="btn btn-secondary">Back to My Post</a></button>
+        <a href="/dashboard/categories" class="btn btn-secondary">Back to Cateogories</a>
         <button type="submit" class="btn btn-primary">Update Post</button>
 
     </form>
