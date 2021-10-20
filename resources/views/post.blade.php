@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <form action="/blog">
+            <form action="/">
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
@@ -36,8 +36,8 @@
                 <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
                 <p>
                     <small class="text-muted">
-                    By. <a href="/blog?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in 
-                    <a href="/blog?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                    By. <a href="/?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in 
+                    <a href="/?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
                     </small>
                 </p>
 
@@ -53,7 +53,7 @@
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
-                        <a href="/blog?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a></div>
+                        <a href="/?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a></div>
                         @if ($post->image)
                             <img src="{{ asset('storage/'. $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
                         @else
@@ -63,7 +63,7 @@
                         <h5 class="card-title">{{ $post->title }} </h5>
                         <p>
                             <small class="text-muted">
-                                By. <a href="/blog?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>
+                                By. <a href="/?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>
                                 {{ $post->created_at->diffForHumans() }}
                             </small>
                             </p>
