@@ -24,8 +24,8 @@
                                 <li class="list-inline-item"><i class="fab fa-laravel"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
                             </ul>
-                            <a href="https://github.com/ahmadpato" class="btn btn-outline-primary px-4 ms-3 social-link" button="submit" target="_blank">Follow My Github</a>
-                            <a href="https://www.linkedin.com/in/muhammad-hidayaturrohman-0a1707a8/" class="btn btn-primary px-4 ms-3 social-link" button="submit" target="_blank">Follow My Linkedin</a>
+                            <a href="https://github.com/ahmadpato" class="btn btn-outline-primary px-4 ms-3 social-link" button="submit" target="_blank">Visit My Github</a>
+                            <a href="https://www.linkedin.com/in/muhammad-hidayaturrohman-0a1707a8/" class="btn btn-primary px-4 ms-3 social-link" button="submit" target="_blank">Visit My Linkedin</a>
                         </div>
                     </div>
                 </div>
