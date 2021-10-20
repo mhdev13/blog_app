@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="/">
             <img style="height: 70px;" class="" src="{{asset('img/mylogo.png')}}" width="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
