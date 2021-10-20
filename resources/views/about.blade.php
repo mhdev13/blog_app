@@ -5,7 +5,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-12">
                 <div class="card p-3 py-4">
-                    <div class="text-center"> <img src="/img/{{ $image_me }}" width="100"> </div>
+                    <div class="text-center"> <img src="/img/{{ $image_me }}" width="100" class="rounded-circle"> </div>
                     <div class="text-center mt-3">
                         <i class="bi bi-envelope"> {{ $email }} </i>
                         <h5 class="mt-3 mb-0">{{ $name }}</h5> 
