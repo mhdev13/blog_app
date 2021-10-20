@@ -6,7 +6,7 @@
         <div class="col-lg-8">
             <h1 class="mb-3">{{ $post->title }}</h1>
 
-            <a href="/dashboard/posts" class="d-block"><h4>Back to My Posts</h4></a>
+            <a href="/dashboard/posts" class="d-block"><h5> Back to My Posts</h5></a>
             
             @if ($post->image)
                 <div style="max-height: 350px; overflow:hidden">
