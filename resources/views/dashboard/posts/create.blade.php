@@ -42,6 +42,14 @@
         </div>
 
         <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" name="status">
+                <option value="draft" selected>Draft</option>
+                <option value="published">Published</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
             <label for="image" class="form-label">Post Image</label>
             <img class="img-preview img-fluid mb-3 col-sm-5">
             <input class="form-control  @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">

@@ -14,7 +14,7 @@
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title', $post->title) }}">
             @error('title')
                 <div class="invalid-feedback">
-                    {{ $message }}
+                    {{ $title }}
                 </div>
             @enderror
         </div>
@@ -39,6 +39,14 @@
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endif
                 @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" name="status">
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
             </select>
         </div>
 

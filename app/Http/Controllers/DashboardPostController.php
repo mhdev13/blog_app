@@ -48,6 +48,7 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'status' => 'required',
             'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
@@ -99,10 +100,11 @@ class DashboardPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
-    {
+    {   
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
+            'status' => 'required',
             'image' => 'image|file|max:1024',
             'body' => 'required'
         ];
@@ -123,7 +125,7 @@ class DashboardPostController extends Controller
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
-
+        
         Post::where('id', $post->id)
             ->update($validatedData);
 
