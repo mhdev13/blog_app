@@ -26,6 +26,12 @@
             Post Categories
           </a>
         </li>
+        <li class="nav-item">  
+          <a class="nav-link {{ Request::is('dashboard/portofolio*') ? 'active' : '' }}" href="/dashboard/portofolio">
+            <span data-feather="trello"></span>
+            Portofolio
+          </a>
+        </li>
       </ul>
       @endcan
 
