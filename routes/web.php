@@ -32,7 +32,7 @@ Route::get('/about', function () {
         "job"   => "Full Stack Developer",
         "image_github" => "github.png",
         "image_me" => "me.jpg",
-        "about" => "I am a professional full stack developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, news portal, and edutech. I master several programming languages ​​such as php with laravel framework and codeigniter, ruby ​​on rails, javascript, mysql and postgresql."
+        "about" => "I am a professional full stack developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, news portal, and edutech. I master several programming languages and databases ​​such as php with laravel framework and codeigniter, ruby ​​with ruby on rails framework, javascript with sencha ext.js framework and vue.js framework, mysql and postgresql."
     ]);
 });
 
