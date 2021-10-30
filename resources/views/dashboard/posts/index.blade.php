@@ -29,7 +29,15 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $post->title }}</td>
             <td>{{ $post->category->name  }}</td>
-            <td>{{ $post->status  }}</td>
+            <td>
+              <?php
+                if($post->status == 'published'){
+                  echo "<span class='badge bg-success'>Published</span>";
+                } else {
+                  echo "<span class='badge bg-secondary'>Draft</span>";
+                }
+              ?>
+            </td>
             <td>
                 <a href="/dashboard/posts/{{ $post->slug }}" button type="button" class="btn btn-info mb-3"><span data-feather="eye"></span></button>
                 </a>
