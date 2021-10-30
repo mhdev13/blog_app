@@ -19,6 +19,7 @@
                                 <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-sass"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+                                <li class="list-inline-item"><i class="fab fa-vuejs"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-php"></i></li>
                                 <li class="list-inline-item"><i class="fab fa-laravel"></i></li>

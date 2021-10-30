@@ -44,9 +44,9 @@
 
         <div class="mb-3">
             <label for="status" class="form-label">Status</label>
-            <select class="form-select" name="status">
-                <option value="draft">Draft</option>
-                <option value="published">Published</option>
+            <select class="form-select" id="status" name="status">
+                <option value="draft" {{ $post->status == "draft" ? 'selected' : ''}}>Draft</option>
+                <option value="published" {{ $post->status == "published" ? 'selected' : ''}}>Published</option>
             </select>
         </div>
 
