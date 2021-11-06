@@ -39,8 +39,23 @@ class AdminPortofolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'category' => 'required',
+            'image' => 'image|file|max:1024',
+            'description' => 'required'
+        ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('portofolio-image');
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+        
+        Portofolio::create($validatedData);
+
+        return redirect('dashboard/portofolio')->with('success', 'Saved Success');
     }
 
     /**

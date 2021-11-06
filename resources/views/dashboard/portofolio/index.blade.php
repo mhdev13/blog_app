@@ -19,23 +19,30 @@
           <th scope="col">No</th>
           <th scope="col">Title</th>
           <th scope="col">Category</th>
-          <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-         
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              
-            </td>
-            <td>
-                
-            </td>
-          </tr>
+        @foreach ($portofolio as $porto)
+        <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $porto->title }}</td>
+          <td>{{ $porto->category}}</td>
+          <td>
+              <a href="/dashboard/portofolio/{{ $porto->id }}" button type="button" class="btn btn-info mb-3"><span data-feather="eye"></span></button>
+              </a>
+              <a href="/dashboard/portofolio/{{ $porto->id }}/edit" button type="button" class="btn btn-warning mb-3"><span data-feather="edit"></span></button>
+              </a>
+              <form action="/dashboard/portofolio/{{ $porto->id }}" method="POST" class="d-inline">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger mb-3" onclick="return confirm('Are You Sure ?')">
+                  <span data-feather="x-circle"></span>
+                </button>
+              </form>
+          </td>
+        </tr>
+        @endforeach
       </tbody>
     </table>
 </div>

@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
+    <form method="post" action="/dashboard/portofolio" class="mb-5" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -31,19 +31,19 @@
 
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
-            <select class="form-select" name="status">
+            <select class="form-select" name="category">
                 <option value="freelance" selected>Freelance Job</option>
                 <option value="main">Main Job</option>
             </select>
         </div>
 
         <div class="mb-3">
-            <label for="body" class="form-label">Body</label>
-            @error('body')
+            <label for="description" class="form-label">Description</label>
+            @error('description')
               <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-            <trix-editor input="body"></trix-editor>
+            <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+            <trix-editor input="description"></trix-editor>
         </div>
        
         <button onclick="goBack()" class="btn btn-secondary">Back to My Portofolio</a></button>
