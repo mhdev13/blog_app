@@ -17,7 +17,9 @@ class AdminPortofolioController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.portofolio.index', [
+            'portofolio' => Portofolio::all()
+        ]);
     }
 
     /**
@@ -27,7 +29,7 @@ class AdminPortofolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.portofolio.create');  
     }
 
     /**

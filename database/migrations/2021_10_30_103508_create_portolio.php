@@ -13,7 +13,7 @@ class CreatePortolio extends Migration
      */
     public function up()
     {
-        Schema::create('portolio', function (Blueprint $table) {
+        Schema::create('portofolios', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('image')->nullable();
