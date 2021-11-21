@@ -57,7 +57,7 @@
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{ old('title', $porto->title) }}">
                 </div>
-        
+
                 <div class="mb-3">
                     <label for="image" class="form-label">porto Image</label>
                     <input type="hidden" name="oldImage" value="{{ $porto->image }}">
@@ -81,7 +81,6 @@
                     <label class="col-form-label">Description:</label>
                     <textarea type="text" class="form-control" name="description" value="{{ old('description', strip_tags($porto->description)) }}">{{ strip_tags($porto->description) }}</textarea>
                 </div>
-
               </div>
 
               <div class="modal-footer">
