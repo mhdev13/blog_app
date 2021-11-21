@@ -89,9 +89,31 @@ class AdminPortofolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Portofolio $portofolio)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'image' => 'image|file|max:1024',
+            'category' => 'required',
+            'description' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+
+            $validatedData['image'] = $request->file('image')->store('portofolio-image');
+        }
+
+        $validatedData['description'] = Str::limit(strip_tags($request->description), 200);
+        
+        Portofolio::where('id', $portofolio->id)
+            ->update($validatedData);
+
+        return redirect('dashboard/portofolio')->with('success', 'Edit Success');
     }
 
     /**
