@@ -39,7 +39,7 @@
             <label for="category" class="form-label">Category</label>
             <select class="form-select" id="category" name="category">
                 <option value="freelance" {{ $portofolio->category == "freelance" ? 'selected' : ''}}>Freelance</option>
-                <option value="mainjob" {{ $portofolio->category == "mainjob" ? 'selected' : ''}}>Main Job</option>
+                <option value="main" {{ $portofolio->category == "main" ? 'selected' : ''}}>Main Job</option>
             </select>
         </div>
         
