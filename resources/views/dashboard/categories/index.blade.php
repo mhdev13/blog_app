@@ -32,10 +32,10 @@
             <td>{{ $category->description }}</td>
             <td>
                 <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#view{{ $category->id }}">
-                  <span data-feather="eye"></span></a></button>
+                  <span data-feather="eye"></span></a>
+                </button>
                 <a href="/dashboard/categories/{{ $category->id }}/edit" button type="button" class="btn btn-warning mb-3"><span data-feather="edit"></span></button>
                 </a>
-                </button>
                 <form action="/dashboard/categories/{{ $category->id }}" method="POST" class="d-inline">
                   @method('delete')
                   @csrf
@@ -54,34 +54,24 @@
                   <h5 class="modal-title" id="viewLabel">View Category</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
-                  <form method="post" id="update_form" action="/dashboard/categories/{{ $category->id }}" class="mb-5">
-                    @method('put')
-                    @csrf
                     <div class="mb-3">
                       <label class="col-form-label">Category Name:</label>
-                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="name" name="name" disabled value="{{ old('name', $category->name) }}">
-                      @error('name')
-                          <div class="invalid-feedback">
-                              {{ $message }}
-                          </div>
-                      @enderror
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="name" name="name" value="{{ old('name', $category->name) }}">
                     </div>
+
                     <div class="mb-3">
                       <label class="col-form-label">Slug:</label>
-                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" disabled value="{{ old('slug', $category->slug) }}">
-                      @error('slug')
-                          <div class="invalid-feedback">
-                              {{ $message }}
-                          </div>
-                      @enderror
+                      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug', $category->slug) }}">
                     </div>
+
                     <div class="mb-3">
                       <label class="col-form-label">Description:</label>
-                      <textarea type="text" class="form-control" name="description" disabled value="{{ old('slug', $category->description) }}">{{ $category->description }}</textarea>
+                      <textarea type="text" class="form-control" name="description" value="{{ old('slug', $category->description) }}">{{ $category->description }}</textarea>
                     </div>
-                  </form>
                 </div>
+
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
