@@ -42,6 +42,7 @@
                 <option value="mainjob" {{ $portofolio->category == "mainjob" ? 'selected' : ''}}>Main Job</option>
             </select>
         </div>
+        
         <div class="mb-3">
             <label class="col-form-label">Description:</label>
             <textarea type="text" class="form-control" name="description" value="{{ old('description', strip_tags($portofolio->description)) }}">{{ strip_tags($portofolio->description) }}</textarea>
