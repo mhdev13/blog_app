@@ -122,8 +122,14 @@ class AdminPortofolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Portofolio $portofolio)
     {
-        //
+        if($portofolio->image){
+            Storage::delete($portofolio->image);
+        }
+        
+        Portofolio::destroy($portofolio->id);
+
+        return redirect('dashboard/portofolio')->with('success', 'Delete Success');
     }
 }
