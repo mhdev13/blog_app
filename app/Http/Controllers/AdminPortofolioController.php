@@ -66,7 +66,7 @@ class AdminPortofolioController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -75,9 +75,11 @@ class AdminPortofolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Portofolio $portofolio)
     {
-        //
+        return view('dashboard.portofolio.edit', [
+            'portofolio' => $portofolio
+        ]);  
     }
 
     /**
