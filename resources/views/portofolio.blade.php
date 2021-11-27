@@ -12,10 +12,9 @@
             @if ($portofolio)
               @foreach ($portofolio as $p)
               <div class="col">
-                <div class="card shadow-sm mt-3" style="border-radius: 15px;">
+                <div class="card shadow-sm mt-3 bg-light" style="border-radius: 15px;">
                   <div class="card-body text-center">
                     <b>{{ $p['title'] }}</b>
-                    <hr>
                     <p><a href='{{ $p['url'] }}' target="_blank" class="link-dark ms-1">{{ $p['url'] }}</a></p>
                   </div>
                   <div class="card-body">
@@ -23,7 +22,6 @@
                   </div>
                   <div class="card-body">
                     <p class="card-text">{{ $p['description'] }}</p>
-                    <hr>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                       <?php
