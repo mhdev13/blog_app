@@ -86,6 +86,7 @@
                     <select class="form-select" id="category" name="category">
                         <option value="freelance" {{ $porto->category == "freelance" ? 'selected' : ''}}>Freelance</option>
                         <option value="main" {{ $porto->category == "main" ? 'selected' : ''}}>Main Job</option>
+                        
                     </select>
                 </div>
                 

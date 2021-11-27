@@ -12,7 +12,7 @@
             @if ($portofolio)
               @foreach ($portofolio as $p)
               <div class="col">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-3">
                   <div class="card-body text-center">
                     <b>{{ $p['title'] }}</b>
                     <hr>
@@ -26,7 +26,15 @@
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <span class="badge bg-primary">{{ $p['category'] }}</span>
+                      <?php
+                          if($p['category'] == 'main'){
+                            echo "<span class='badge bg-primary'>Main Job</span>";
+                          } elseif($p['category'] == 'freelance') {
+                            echo "<span class='badge bg-success'>Freelance</span>";
+                          } else {
+                            echo "<span class='badge bg-warning'>Self Employeed</span>";
+                          }
+                      ?>
                       </div>
                     </div>
                   </div>
@@ -35,7 +43,10 @@
               @endforeach
             @endif
           </div>
+          <div class="mt-3">
+            {{ $portofolio->links() }}
+          </div>
     </div>
-  </div
-
+    
+  </div>
 @endsection

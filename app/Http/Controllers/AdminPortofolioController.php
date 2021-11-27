@@ -43,7 +43,7 @@ class AdminPortofolioController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'category' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:2024',
             'description' => 'required',
             'status' => 'required',
             'url' => 'url'
@@ -84,7 +84,7 @@ class AdminPortofolioController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:2024',
             'category' => 'required',
             'description' => 'required',
             'status' => 'required',

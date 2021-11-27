@@ -16,7 +16,8 @@ class PortofolioController extends Controller
     public function index()
     {
         return view('portofolio', [
-            'portofolio' => Portofolio::all()->where('status', '=', 'active')
+            'portofolio' => Portofolio::first()->where('status', '=', 'active')
+            ->paginate(6)->withQueryString()
         ]);
     }
 }

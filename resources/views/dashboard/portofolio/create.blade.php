@@ -32,8 +32,9 @@
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category">
-                <option value="freelance" selected>Freelance Job</option>
-                <option value="main">Main Job</option>
+                <option value="freelance">Freelance Job</option>
+                <option value="main" selected>Main Job</option>
+                <option value="self">Self Employed</option>
             </select>
         </div>
 
@@ -42,7 +43,7 @@
             @error('description')
               <p class="text-danger">{{ $message }}</p>
             @enderror
-            <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+            <textarea id="description" class="form-control" value="description" id="description" rows="3" name="description" required="required" value="{{ old('description') }}"></textarea>
         </div>
 
         <div class="mb-3">
