@@ -4,7 +4,7 @@
 
   <div class="album py-5">
     <div class="container">
-      <div class="header text-center">
+      <div class="header text-center text-primary">
         <h1>My Portofolio</h1>
       </div>
      
