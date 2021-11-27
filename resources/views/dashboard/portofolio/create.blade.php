@@ -45,6 +45,14 @@
             <input id="description" type="hidden" name="description" value="{{ old('description') }}">
             <trix-editor input="description"></trix-editor>
         </div>
+
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" name="status">
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
        
         <button onclick="goBack()" class="btn btn-secondary">Back to My Portofolio</a></button>
         <button type="submit" class="btn btn-primary">Create Portofolio</button>

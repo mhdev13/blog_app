@@ -44,9 +44,21 @@
         </div>
         
         <div class="mb-3">
-            <label class="col-form-label">Description:</label>
-            <textarea type="text" class="form-control" name="description" value="{{ old('description', strip_tags($portofolio->description)) }}">{{ strip_tags($portofolio->description) }}</textarea>
+            <label for="description" class="form-label">Description</label>
+            @error('description')
+              <p class="text-danger">{{ $message }}</p>
+            @enderror
+            <input id="description" type="hidden" name="description" value="{{ old('description'), strip_tags($portofolio->description) }}">
+            <trix-editor input="description">{{ strip_tags($portofolio->description) }}</trix-editor>
         </div>
+
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+                <option value="active" {{ $portofolio->status == "active" ? 'selected' : ''}}>active</option>
+                <option value="inactive" {{ $portofolio->status == "inactive" ? 'selected' : ''}}>inactive</option>
+            </select>
+          </div>
 
         <a href="/dashboard/portofolio" class="btn btn-secondary">Back to Portofolio</a>
         <button type="submit" class="btn btn-primary">Update Post</button>

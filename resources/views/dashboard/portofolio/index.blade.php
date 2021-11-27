@@ -20,6 +20,7 @@
           <th scope="col">Title</th>
           <th scope="col">Category</th>
           <th scope="col">Description</th>
+          <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -30,6 +31,7 @@
           <td>{{ $porto->title }}</td>
           <td>{{ $porto->category}}</td>
           <td>{{ $porto->description}}</td>
+          <td>{{ $porto->status}}</td>
           <td>
             <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#view{{ $porto->id }}"><span data-feather="eye"></span></button>
             <a href="/dashboard/portofolio/{{ $porto->id }}/edit" button type="button" class="btn btn-warning mb-3"><span data-feather="edit"></span>
@@ -75,6 +77,14 @@
                         <option value="freelance" {{ $porto->category == "freelance" ? 'selected' : ''}}>Freelance</option>
                         <option value="main" {{ $porto->category == "main" ? 'selected' : ''}}>Main Job</option>
                     </select>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="status" class="form-label">Status</label>
+                  <select class="form-select" id="status" name="status">
+                      <option value="active" {{ $porto->status == "active" ? 'selected' : ''}}>active</option>
+                      <option value="inactive" {{ $porto->status == "inactive" ? 'selected' : ''}}>inactive</option>
+                  </select>
                 </div>
                 
                 <div class="mb-3">
