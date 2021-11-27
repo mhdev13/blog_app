@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portofolio;
+
 use Illuminate\Http\Request;
 
 class PortofolioController extends Controller
@@ -13,6 +15,8 @@ class PortofolioController extends Controller
      */
     public function index()
     {
-        return view('portofolio');
+        return view('portofolio', [
+            'portofolio' => Portofolio::all()->where('status', '=', 'active')
+        ]);
     }
 }
