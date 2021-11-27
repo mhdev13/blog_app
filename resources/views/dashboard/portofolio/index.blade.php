@@ -20,6 +20,7 @@
           <th scope="col">Title</th>
           <th scope="col">Category</th>
           <th scope="col">Description</th>
+          <th scope="col">Url</th>
           <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
@@ -31,6 +32,7 @@
           <td>{{ $porto->title }}</td>
           <td>{{ $porto->category}}</td>
           <td>{{ $porto->description}}</td>
+          <td>{{ $porto->url}}</td>
           <td>{{ $porto->status}}</td>
           <td>
             <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#view{{ $porto->id }}"><span data-feather="eye"></span></button>
@@ -91,6 +93,17 @@
                     <label class="col-form-label">Description:</label>
                     <textarea type="text" class="form-control" name="description" value="{{ old('description', strip_tags($porto->description)) }}">{{ strip_tags($porto->description) }}</textarea>
                 </div>
+
+                <div class="mb-3">
+                  <label for="url" class="form-label">Url</label>
+                  <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" required autofocus value="{{ old('url',$porto->url) }}">
+                  @error('url')
+                      <div class="invalid-feedback">
+                          {{ $message }}
+                      </div>
+                  @enderror
+              </div>
+
               </div>
 
               <div class="modal-footer">

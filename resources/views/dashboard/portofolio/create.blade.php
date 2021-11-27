@@ -43,7 +43,16 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
             <input id="description" type="hidden" name="description" value="{{ old('description') }}">
-            <trix-editor input="description"></trix-editor>
+        </div>
+
+        <div class="mb-3">
+            <label for="url" class="form-label">Url</label>
+            <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" required autofocus value="{{ old('url') }}">
+            @error('url')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-3">

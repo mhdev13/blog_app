@@ -14,6 +14,8 @@
               <div class="card shadow-sm">
                 <div class="card-body text-center">
                   <b>{{ $p['title'] }}</b>
+                  <hr>
+                  <p><a href='{{ $p['url'] }}' target="_blank" class="link-dark ms-1">{{ $p['url'] }}</a></p>
                 </div>
                 <div class="card-body">
                   <img src="{{ asset('storage/'. $p['image']) }}" class="img-fluid" alt="">
@@ -24,7 +26,6 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <span class="badge bg-primary">{{ $p['category'] }}</span>
-                      <span class="badge bg-success ms-1"><a href='https://user.gadjian.com/' target="_blank" class="link-light">https://user.gadjian.com/</a></span> 
                     </div>
                   </div>
                 </div>

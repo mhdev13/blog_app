@@ -44,12 +44,18 @@
         </div>
         
         <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            @error('description')
-              <p class="text-danger">{{ $message }}</p>
+            <label for="">Description</label>
+            <textarea id="description" class="form-control" value="description" id="description" rows="3" name="description" required="required">{{$portofolio->description}}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="url" class="form-label">Url</label>
+            <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" required autofocus value="{{ old('url', $portofolio->url) }}">
+            @error('url')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
             @enderror
-            <input id="description" type="hidden" name="description" value="{{ old('description'), strip_tags($portofolio->description) }}">
-            <trix-editor input="description">{{ strip_tags($portofolio->description) }}</trix-editor>
         </div>
 
         <div class="mb-3">
