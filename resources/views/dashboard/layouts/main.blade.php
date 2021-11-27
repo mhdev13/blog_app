@@ -47,14 +47,5 @@
 
     <script src="/js/form_crud.js"></script>
 
-    <script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-    <script>
-    var description = document.getElementById("description");
-        CKEDITOR.replace(description,{
-        language:'en-gb'
-    });
-    CKEDITOR.config.allowedContent = true;
-    </script>
-
   </body>
 </html>

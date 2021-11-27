@@ -66,6 +66,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
             <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+            <trix-editor input="body"></trix-editor>
         </div>
        
         <button onclick="goBack()" class="btn btn-secondary">Back to My Post</a></button>
