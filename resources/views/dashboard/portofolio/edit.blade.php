@@ -61,13 +61,13 @@
         <div class="mb-3">
             <label for="status" class="form-label">Status</label>
             <select class="form-select" id="status" name="status">
-                <option value="active" {{ $portofolio->status == "active" ? 'selected' : ''}}>active</option>
-                <option value="inactive" {{ $portofolio->status == "inactive" ? 'selected' : ''}}>inactive</option>
+                <option value="active" {{ $portofolio->status == "active" ? 'selected' : ''}}>Active</option>
+                <option value="inactive" {{ $portofolio->status == "inactive" ? 'selected' : ''}}>Inactive</option>
             </select>
           </div>
 
         <a href="/dashboard/portofolio" class="btn btn-secondary">Back to Portofolio</a>
-        <button type="submit" class="btn btn-primary">Update Post</button>
+        <button type="submit" class="btn btn-primary">Update Portofolio</button>
 
     </form>
 </div>

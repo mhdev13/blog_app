@@ -33,7 +33,15 @@
           <td>{{ $porto->category}}</td>
           <td>{{ $porto->description}}</td>
           <td>{{ $porto->url}}</td>
-          <td>{{ $porto->status}}</td>
+          <td> 
+            <?php
+                if($porto->status == 'active'){
+                  echo "<span class='badge bg-success'>Active</span>";
+                } else {
+                  echo "<span class='badge bg-danger'>Inactive</span>";
+                }
+              ?>
+          </td>
           <td>
             <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#view{{ $porto->id }}"><span data-feather="eye"></span></button>
             <a href="/dashboard/portofolio/{{ $porto->id }}/edit" button type="button" class="btn btn-warning mb-3"><span data-feather="edit"></span>
