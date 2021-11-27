@@ -36,9 +36,11 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/',[PostController::class,'index']);
+Route::get('/',[PortofolioController::class,'index']);
 
 Route::get('/portofolio',[PortofolioController::class,'index']);
+
+Route::get('/posts',[PostController::class,'index']);
 
 Route::get('/posts/{post:slug}',[PostController::class,'show']);
 
