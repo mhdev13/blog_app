@@ -13,9 +13,9 @@
               @foreach ($portofolio as $p)
               <div class="col">
                 <div class="card shadow-sm mt-3 bg-light" style="border-radius: 15px;">
-                  <div class="card-body text-center">
+                  <div class="card-body text-center mt-3">
                     <b>{{ $p['title'] }}</b>
-                    <p><a href='{{ $p['url'] }}' target="_blank" class="link-dark ms-1">{{ $p['url'] }}</a></p>
+                    <p class="mt-2"><a href='{{ $p['url'] }}' target="_blank" class="link-dark ms-1">{{ $p['url'] }}</a></p>
                   </div>
                   <div class="card-body">
                     <img src="{{ asset('storage/'. $p['image']) }}" class="img-fluid" alt="">
