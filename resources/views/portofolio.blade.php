@@ -12,7 +12,7 @@
             @if ($portofolio)
               @foreach ($portofolio as $p)
               <div class="col">
-                <div class="card shadow-sm mt-3" style="border-radius: 30px;">
+                <div class="card shadow-sm mt-3" style="border-radius: 15px;">
                   <div class="card-body text-center">
                     <b>{{ $p['title'] }}</b>
                     <hr>
