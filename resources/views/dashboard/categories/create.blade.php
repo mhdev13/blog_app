@@ -38,8 +38,9 @@
             @enderror
         </div>
        
-        <button onclick="goBack()" class="btn btn-secondary">Back to My Post</a></button>
-        <button type="submit" class="btn btn-primary">Create Post</button>
+        <button onclick="goBack()" class="btn btn-secondary">Back to Category</a></button>
+        <button type="submit" class="btn btn-primary">Create Category</button>
+        
 
     </form>
 </div>

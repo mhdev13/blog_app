@@ -65,10 +65,10 @@
                 <option value="active" {{ $portofolio->status == "active" ? 'selected' : ''}}>Active</option>
                 <option value="inactive" {{ $portofolio->status == "inactive" ? 'selected' : ''}}>Inactive</option>
             </select>
-          </div>
+        </div>
 
-        <a href="/dashboard/portofolio" class="btn btn-secondary">Back to Portofolio</a>
         <button type="submit" class="btn btn-primary">Update Portofolio</button>
+        <a href="/dashboard/portofolio" class="btn btn-secondary">Back to Portofolio</a>
 
     </form>
 </div>
