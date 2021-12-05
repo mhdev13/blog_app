@@ -11,6 +11,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminPortofolioController;
+use App\Http\Controllers\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,10 @@ Route::get('/about', function () {
         'active' => 'about',
         "name"  => "Muhmammad Hidayaturrohman",
         "email" => "mhidayaturachman@gmail.com",
-        "job"   => "Full Stack Developer",
+        "job"   => "Senior Web Developer",
         "image_github" => "github.png",
         "image_me" => "me.jpg",
-        "about" => "I am a professional full stack developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, news portal, and edutech. I master several programming languages and databases ​​such as php with laravel framework and codeigniter, ruby ​​with ruby on rails framework, javascript with sencha ext.js framework and vue.js framework, mysql and postgresql."
+        "about" => "I am a professional senior web developer with more than 7 years of experience and have worked in several fields of technology companies such as agri-tech, hris, gis, news portal, and edutech. I master several programming languages ​​such as php with laravel framework and codeigniter, ruby ​​with ruby on rails framework, javascript with sencha ext.js framework and vue.js framework, and databases mysql and postgresql and cms wordpress."
     ]);
 });
 
@@ -73,5 +74,7 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::resource('/dashboard/portofolio', AdminPortofolioController::class)->except('show')->middleware('admin');
+
+Route::resource('/dashboard/user', AdminUserController::class)->except('show')->middleware('admin');
 
 Route::get('/product', [ProductController::class, 'index']);

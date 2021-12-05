@@ -13,6 +13,12 @@
             My Post
           </a>
         </li>
+        <li class="nav-item">  
+          <a class="nav-link {{ Request::is('dashboard/user*') ? 'active' : '' }}" href="/dashboard/user">
+            <span data-feather="user"></span>
+            My Profile
+          </a>
+        </li>
       </ul>
 
       @can('admin')
