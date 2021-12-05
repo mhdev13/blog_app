@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -13,7 +13,9 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        return view('dashboard.user.index');
+        return view('dashboard.user.index',[
+            'user' => User::where('id', auth()->user()->id)->get()
+        ]);
     }
 
     /**

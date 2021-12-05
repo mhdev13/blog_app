@@ -75,6 +75,6 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 
 Route::resource('/dashboard/portofolio', AdminPortofolioController::class)->except('show')->middleware('admin');
 
-Route::resource('/dashboard/user', AdminUserController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/user', AdminUserController::class);
 
 Route::get('/product', [ProductController::class, 'index']);
