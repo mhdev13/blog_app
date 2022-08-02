@@ -17,6 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/portofolio">Portofolio</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/orders">Orders</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
